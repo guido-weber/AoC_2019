@@ -1,7 +1,9 @@
+(ns aoc-2019.day-01.core)
+
 (defn pi [x] (Integer/parseInt x))
 
 (defn inp []
-    (->> (slurp "input.txt")
+    (->> (slurp "src/aoc_2019/day_01/input.txt")
         clojure.string/split-lines
         (map pi)))
 
@@ -23,8 +25,6 @@
     (->> (inp)
         (map fuel)
         (reduce +)))
-
-(println "Part 1:" (part1))
 
 (defn rfuel2 [f]
     (if (<= f 0)
@@ -50,5 +50,3 @@
     (->> (inp)
         (map fuel2)
         (reduce +)))
-
-(println "Part 2:" (part2))
