@@ -28,3 +28,7 @@
     (->> (inp)
         (map fuel2)
         (reduce +)))
+
+(defn -main [& args]
+    (println "Part 1:" (part1))
+    (println "Part 2:" (part2)))
