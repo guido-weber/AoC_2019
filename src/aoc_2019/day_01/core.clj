@@ -1,11 +1,9 @@
 (ns aoc-2019.day-01.core)
 
-(defn pi [x] (Integer/parseInt x))
-
 (defn inp []
     (->> (slurp "src/aoc_2019/day_01/input.txt")
         clojure.string/split-lines
-        (map pi)))
+        (map #(Integer/parseInt %))))
 
 ; Fuel required to launch a given module is based on its mass. Specifically, to find the
 ; fuel required for a module, take its mass, divide by three, round down, and subtract 2.
