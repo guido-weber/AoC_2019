@@ -1,3 +1,5 @@
+(ns aoc-2019.day-02.core)
+
 (defn inp []
     (vec
         (map
@@ -5,7 +7,7 @@
             (mapcat
                 (fn [l] (clojure.string/split l #","))
                 (clojure.string/split-lines
-                    (slurp "input.txt"))))))
+                    (slurp "src/aoc_2019/day_02/input.txt"))))))
 
 (defn do_op [opcode arg1 arg2]
     (case opcode
@@ -37,8 +39,6 @@
         (get 0)))
 ;    (get (run (assoc (assoc (inp) 1 noun) 2 verb) 0) 0))
 
-(println "Part 1:" (run_prog 12 2))
-
 (defn part2 []
     (loop [noun 0 verb 0]
         (let [result (run_prog noun verb)]
@@ -47,4 +47,6 @@
                 (< verb 99) (recur noun (inc verb))
                 (< noun 99) (recur (inc noun) 0)))))
 
-(println "Part 2:" (part2))
+(defn -main [& args]
+    (println "Part 1:" (run_prog 12 2))
+    (println "Part 2:" (part2)))

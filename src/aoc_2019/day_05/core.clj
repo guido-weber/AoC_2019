@@ -1,3 +1,5 @@
+(ns aoc-2019.day-05.core)
+
 (defn inp []
     (vec
         (map
@@ -5,7 +7,7 @@
             (mapcat
                 #(clojure.string/split % #",")
                 (clojure.string/split-lines
-                    (slurp "input.txt"))))))
+                    (slurp "src/aoc_2019/day_05/input.txt"))))))
 
 (defn decode [instruction]
     (let [[oc_mode adr1 adr2 adr3] instruction
@@ -45,5 +47,6 @@
             (println (subvec newprog 220 236))
             (run newprog newpos)))))
 
-(println "Part 1:")
-(run (inp) 0)
+(defn -main [& args]
+    (println "Part 1:")
+    (run (inp) 0))

@@ -1,3 +1,5 @@
+(ns aoc-2019.day-04)
+
 (defn criteria? [n]
     (let [[a,b,c,d,e,f] (map (fn [x] (int x)) (str n))]
       (and
@@ -18,8 +20,6 @@
         (filter criteria?)
         (count)))
 
-(println "Part 1:" (part1))
-
 (defn criteria2? [n]
     (let [[a,b,c,d,e,f] (map (fn [x] (int x)) (str n))]
       (and
@@ -35,4 +35,6 @@
         (filter criteria2?)
         (count)))
 
-(println "Part 2:" (part2))
+(defn -main [& args]
+    (println "Part 1:" (part1))
+    (println "Part 2:" (part2)))
