@@ -2,6 +2,6 @@
   :description "Solutions for Advent of Code 2019"
   :license {:name "Unlicense"
             :url "https://unlicense.org"}
-  :dependencies [[org.clojure/clojure "1.10.0"]]
+  :dependencies [[org.clojure/clojure "1.10.1"]]
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
